@@ -1,0 +1,29 @@
+  <form id="form" class="topBefore">
+      <input type="text" [(ngModel)]="mascota.nombre" name="nombre" placeholder="NAME">
+      <input type="text" [(ngModel)]="mascota.raza" name="raza" placeholder="RAZA">
+      <input type="text" [(ngModel)]="mascota.tipo" name="tipo" placeholder="TIPO">
+    
+    <button id="button" type="button" (click)="ingresarMascota()">Ingresar mascota</button>
+    <button id="button" type="button" (click)="ActualizarMascota(id)">Actualizar mascota</button>
+  </form>
+  <hr>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mascota of mascotas;let i = index">
+        <td>{{mascota.nombre}}</td>
+        <td>{{mascota.raza}}</td>
+        <td>{{mascota.tipo}}</td>
+        <td><button type="button" (click)="eliminarmascota(i)">X</button></td>
+        <td><button type="button" (click)="editarmascota(mascota, i)">editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
